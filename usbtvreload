@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DISPLAY=:0
+modprobe -r usbtv || zenity --title 'USBTV Module Unload fail' --text 'USBTV kernel-module failed to unload' --error
+modprobe usbtv && zenity --title 'USBTV Module Reload success' --text 'USBTV kernel-module reloaded successfully' --info || zenity --title 'USBTV Module Reload fail' --text 'USBTV kernel-module failed to load' --error
